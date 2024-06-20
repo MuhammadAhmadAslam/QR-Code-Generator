@@ -76,6 +76,21 @@ button{
     margin-left: 5px;
     margin-top: 10px;
 }
+a{
+    background-color: #4C3642;
+    width: 180px;
+    border: none;
+    height: 50px;
+    font-size: 16px;
+    color: white;
+    font-weight: bolder;
+    font-family: monospace;
+    margin-left: 5px;
+    margin-top: 10px;
+    text-decoration: none;
+    padding-top: 15px;
+    padding-left: 19px;
+}
 @media screen and (min-width: 0px) and (max-width: 450px) {
     input{
         width: 80%;

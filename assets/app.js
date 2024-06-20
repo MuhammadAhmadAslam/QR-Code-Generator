@@ -8,10 +8,21 @@ generate.addEventListener('click' , (e) => {
         child.innerHTML = `<h1>QR Code Generator</h1>
         <div class="inputOrButton">
         <input type="text" id="input" placeholder="Enter a Text or URL">
-        <button id="generate">Generate QR Code</button>
+        <button id="generate" >Generate QR Code</button>
         </div>
         <img src="https://api.qrserver.com/v1/create-qr-code/?size=150x150&data=${input.value}" alt="" id="image">
-        <button>Download QR Code</button>`
+        <a href="https://api.qrserver.com/v1/create-qr-code/?size=150x150&data=${input.value}" download="https://api.qrserver.com/v1/create-qr-code/?size=150x150&data=${input.value}" id='btn'>Download QR Code</a>`
+        let imgUrl = `https://api.qrserver.com/v1/create-qr-code/?size=150x150&data=${input.value}`
+        let fileName = `qr-code-${input.value}.png`
+        let btn = document.getElementById('btn')
+        console.log(btn);
+            btn.addEventListener('click', () => {
+                const link = document.createElement('a');
+                link.href = imgUrl;
+                link.download = fileName;
+                // link.click();
+                console.log(true);
+              });
         
     }else{
         setTimeout(() => {
@@ -22,3 +33,4 @@ generate.addEventListener('click' , (e) => {
         }, 10);
     }
 })
+
